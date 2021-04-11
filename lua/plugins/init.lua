@@ -6,6 +6,13 @@ local packer_exists = pcall(vim.cmd, [[packadd packer.nvim]])
 require('packer').startup(function()
   use {'wbthomason/packer.nvim', opt = true}
 
+  use {
+    'drewtempelmeyer/palenight.vim',
+    config = function()
+      vim.cmd('colorscheme palenight')
+    end,
+  }
+
   -- use {'kyazdani42/nvim-web-devicons'}
 
   use {
