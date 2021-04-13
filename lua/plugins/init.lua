@@ -39,6 +39,22 @@ require('packer').startup(function()
   }
 
   use {
+    'nvim-treesitter/nvim-treesitter',
+    requires = {
+      'nvim-treesitter/nvim-treesitter-refactor',
+      'nvim-treesitter/nvim-treesitter-textobjects',
+      'romgrk/nvim-treesitter-context',
+      'p00f/nvim-ts-rainbow',
+      'bryall/contextprint.nvim',
+      'theHamsta/nvim-treesitter-pairs'
+    },
+    run = ':TSUpdate',
+    config = function()
+      require('plugins.config.treesitter')
+    end,
+  }
+
+  use {
     'mhinz/vim-startify',
     config = function()
       require('plugins.config.startify')
