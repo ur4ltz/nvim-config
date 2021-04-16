@@ -13,11 +13,12 @@ require('packer').startup(function()
     end,
   }
 
-  -- use {'kyazdani42/nvim-web-devicons'}
+  use {'kyazdani42/nvim-web-devicons'}
 
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = {'kyazdani42/nvim-web-devicons'},
+    commit = 'c2f2c665',
+    requires = {'nvim-web-devicons'},
     config = function()
       require('plugins.config.tree-config').setup()
     end,
@@ -43,7 +44,6 @@ require('packer').startup(function()
     requires = {
       'nvim-treesitter/nvim-treesitter-refactor',
       'nvim-treesitter/nvim-treesitter-textobjects',
-      'romgrk/nvim-treesitter-context',
       'p00f/nvim-ts-rainbow',
       'bryall/contextprint.nvim',
       'theHamsta/nvim-treesitter-pairs'
