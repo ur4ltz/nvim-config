@@ -1,19 +1,22 @@
-local vim = vim
+-- vim: ts=2 sw=2 et:
 
-local header = [[
+vim.g.startify_files_number        = 20
 
-                _
-     _ ____   _(_)_ __ ___
-    | `_ \ \ / / | `_ ` _ \
-    | | | \ V /| | | | | | |
-    |_| |_|\_/ |_|_| |_| |_|
-   
-]]
+vim.g.webdevicons_enable_startify  = 1
 
-return {
-    init = function()
-        vim.g.startify_custom_header = header
-        vim.fn.execute('Startify')
-    end
+vim.g.startify_fortune_use_unicode = 1
+
+vim.g.startify_session_persistence = 1
+
+vim.g.startify_session_sort = 1
+
+--[[
+vim.g.startify_custom_header = {
+ '                _           ',
+ '     _ ____   _(_)_ __ ___  ',
+ '    | `_ \ \ / / | `_ ` _ \ ',
+ '    | | | \ V /| | | | | | |',
+ '    |_| |_|\_/ |_|_| |_| |_|',
 }
-
+--]]
+vim.g.startify_custom_header = {}

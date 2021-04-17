@@ -80,9 +80,7 @@ require('packer').startup(function()
 
   use {
     'mhinz/vim-startify',
-    config = function()
-      require('plugins.config.startify')
-    end,
+    config = require('plugins.config.startify')
   }
 
   use {
