@@ -2,12 +2,15 @@ local M = {}
 
 function M.setup()
   vim.g.nvim_tree_side       = 'left'
-  vim.g.nvim_tree_width      = 60
+  vim.g.nvim_tree_width      = 65
 
   vim.g.nvim_tree_auto_open  = 0
   vim.g.nvim_tree_auto_close = 1
   vim.g.nvim_tree_follow     = 1
   vim.g.nvim_tree_tab_open   = 1
+
+  -- vim.g.nvim_tree_lsp_diagnostics = 1
+  vim.g.nvim_tree_gitignore  = 1
 
   vim.g.nvim_tree_ignore     = {
     '.git',
@@ -23,24 +26,22 @@ function M.setup()
   }
 
   vim.g.nvim_tree_icons = {
-    default     = '',
-    symlink     = '',
+    default      = '',
+    symlink      = '',
     git= {
-      unstaged  = "✗",
-      staged    = "✓",
-      unmerged  = "",
-      renamed   = "➜",
-      untracked = "★"
+      unstaged   = "✗",
+      staged     = "✓",
+      unmerged   = "",
+      renamed    = "➜",
+      untracked  = "★"
     },
     folder = {
-      default   = "",
-      open      = ""
+      default    = "",
+      open       = "",
+      empty      = "",
+      empty_open = ""
     }
   }
-
---  vim.g.nvim_tree_bindings = {
---    preview = { '<C-p>', '<C-b>', '<Tab>' }
---  }
 
     vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', {
         noremap = true,
@@ -51,14 +52,6 @@ function M.setup()
         noremap = true,
         silent = true
     })
-
-  vim.api.nvim_exec([[
-  augroup NvimTreeOverride
-    au!
-    au FileType NvimTree setlocal nowrap
-  augroup END
-  ]], '')
-
 end
 
 return M
