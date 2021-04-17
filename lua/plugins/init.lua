@@ -16,16 +16,16 @@ end
 require('packer').startup(function()
   use {'wbthomason/packer.nvim'}
 
-  use {
-    disable = true,
-    'gruvbox-community/gruvbox',
-    config = function()
-      vim.o.background = "dark"
-      vim.g.gruvbox_italics = true
-      vim.g.gruvbox_contrast_dark = "hard"
-      vim.cmd [[colorscheme gruvbox]]
-    end,
-  }
+--  use {
+--    disable = true,
+--    'gruvbox-community/gruvbox',
+--    config = function()
+--      vim.o.background = "dark"
+--      vim.g.gruvbox_italics = true
+--      vim.g.gruvbox_contrast_dark = "hard"
+--      vim.cmd [[colorscheme gruvbox]]
+--    end
+--  }
 
   use {
     --disable = true,
