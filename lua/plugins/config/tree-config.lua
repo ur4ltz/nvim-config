@@ -9,7 +9,7 @@ function M.setup()
   vim.g.nvim_tree_follow     = 1
   vim.g.nvim_tree_tab_open   = 1
 
-  -- vim.g.nvim_tree_lsp_diagnostics = 1
+  vim.g.nvim_tree_lsp_diagnostics = 1
   vim.g.nvim_tree_gitignore  = 1
 
   vim.g.nvim_tree_ignore     = {
@@ -26,8 +26,8 @@ function M.setup()
   }
 
   vim.g.nvim_tree_icons = {
-    default      = '',
-    symlink      = '',
+    default      = " ",
+    symlink      = "",
     git= {
       unstaged   = "✗",
       staged     = "✓",
@@ -40,6 +40,12 @@ function M.setup()
       open       = "",
       empty      = "",
       empty_open = ""
+    },
+    lsp = {
+      hint       = "",
+      info       = "",
+      warning    = "",
+      error      = "",
     }
   }
 
