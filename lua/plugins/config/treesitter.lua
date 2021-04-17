@@ -2,7 +2,7 @@
 
 require('nvim-treesitter.configs').setup {
   ensure_installed = {
-    'all' -- 'maintained'
+    "all" -- "maintained"
   },
   highlight = {
     enable = true,

@@ -32,3 +32,5 @@ wo.cursorcolumn = true
 g.loaded_perl_provider   = 0
 g.loaded_python_provider = 0
 
+vim.cmd [[colorscheme palenight]]
+
