@@ -43,9 +43,7 @@ require('packer').startup(function()
     requires = {
       'nvim-web-devicons'
     },
-    config = function()
-      require('plugins.config.tree-config').setup()
-    end,
+    config = require('plugins.config.tree-config').setup()
   }
 
   use {
@@ -73,9 +71,7 @@ require('packer').startup(function()
       {'theHamsta/nvim-treesitter-pairs'}
     },
     run = ':TSUpdate',
-    config = function()
-      require('plugins.config.treesitter')
-    end,
+    config = require('plugins.config.treesitter')
   }
 
   use {
