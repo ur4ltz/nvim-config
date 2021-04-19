@@ -10,7 +10,7 @@ function M.setup()
   vim.g.nvim_tree_tab_open   = 1
 
   vim.g.nvim_tree_lsp_diagnostics = 1
-  vim.g.nvim_tree_gitignore  = 1
+  vim.g.nvim_tree_gitignore  = 0
 
   vim.g.nvim_tree_ignore     = {
     '.git',
