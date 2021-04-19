@@ -49,7 +49,9 @@ require('packer').startup(function()
   use {
     'hrsh7th/nvim-compe',
     requires = {
-      'hrsh7th/vim-vsnip'
+      'hrsh7th/vim-vsnip',
+      --'hrsh7th/vim-vsnip-integ',
+      'rafamadriz/friendly-snippets'
     },
     config = require('plugins.config.compe') --.config()
   }
