@@ -97,5 +97,7 @@ require('packer').startup(function()
     end,
   }
 
+  use {'euclidianAce/BetterLua.vim'}
+
 end)
 
