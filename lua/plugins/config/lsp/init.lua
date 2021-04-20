@@ -2,3 +2,32 @@
 
 require('plugins.config.lsp.settings')
 
+-- Pretty icons
+vim.lsp.protocol.CompletionItemKind = {
+  '[text]',
+  '[method]',
+  ' [function]',
+  '[constructor]',
+  '[field]',
+  '[variable]',
+  '[class]',
+  '[interface]',
+  '[module]',
+  '[property]',
+  '[unit]',
+  '[value]',
+  '[enum]',
+  '[key]',
+  '[snippet]',
+  '[color]',
+  '[file]',
+  '[reference]',
+  '  [folder]',
+  '[enum member]',
+  '[constant]',
+  '[struct]',
+  '[event]',
+  '[operator]',
+  '[type]',
+}
+
