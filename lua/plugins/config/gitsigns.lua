@@ -8,12 +8,10 @@ require('gitsigns').setup {
     topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn'},
     changedelete = {hl = 'GitSignsChange', text = '~', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn'},
   },
-  numhl = true,
-  linehl = false,
   keymaps = {
     -- Default keymap options
     noremap = true,
-    buffer = true,
+    buffer  = true,
 
     ['n ]c'] = {expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'"},
     ['n [c'] = {expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'"},
@@ -32,11 +30,13 @@ require('gitsigns').setup {
   watch_index = {
     interval = 1000,
   },
+  numhl              = true,
+  linehl             = false,
   current_line_blame = false,
-  sign_priority = 6,
-  update_debounce = 100,
-  status_formatter = nil,
+  sign_priority      = 6,
+  update_debounce    = 100,
+  status_formatter   = nil,
   use_decoration_api = true,
-  use_internal_diff = true,
+  use_internal_diff  = true,
 }
 
