@@ -3,6 +3,10 @@
 local api = vim.api
 local nvim_lsp = require('lspconfig')
 
+local custom_attach = function(client)
+  -- test
+end
+
 local function get_lua_runtime()
     local result = {}
     for _, path in pairs(api.nvim_list_runtime_paths()) do
@@ -36,7 +40,8 @@ local servers = {
           globals = {'vim', 'use'},
         },
         workspace = {
-          library = get_lua_runtime()
+          library = get_lua_runtime(),
+          preloadFileSize = 1000
         }
       }
     }
@@ -44,6 +49,7 @@ local servers = {
 }
 
 for server, config in pairs(servers) do
+  config.on_attach = custom_attach
   nvim_lsp[server].setup(config)
 end
 
