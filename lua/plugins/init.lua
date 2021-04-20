@@ -77,6 +77,14 @@ require('packer').startup(function()
   }
 
   use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = require('plugins.config.gitsigns')
+  }
+
+  use {
     'mhinz/vim-startify',
     config = require('plugins.config.startify')
   }
