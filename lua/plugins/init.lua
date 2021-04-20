@@ -85,6 +85,11 @@ require('packer').startup(function()
   }
 
   use {
+    'famiu/feline.nvim',
+    config = require('plugins.config.feline')
+  }
+
+  use {
     'mhinz/vim-startify',
     config = require('plugins.config.startify')
   }
