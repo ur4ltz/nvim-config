@@ -99,5 +99,16 @@ require('packer').startup(function()
 
   use {'euclidianAce/BetterLua.vim'}
 
-end)
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      'nvim-lua/popup.nvim',
+      'nvim-lua/plenary.nvim',
+    },
+    config = function()
+      require('plugins.config.telescope')
+    end,
+  }
+
+end, {git = {clone_timeout = 360}} )
 
