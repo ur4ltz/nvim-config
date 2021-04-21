@@ -8,6 +8,7 @@ o.updatetime    = 800
 o.termguicolors = true
 o.mouse         = 'n'
 o.ignorecase    = true
+o.wrap          = false
 
 o.wildmenu      = true
 o.wildmode      = 'full'
