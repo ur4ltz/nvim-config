@@ -9,3 +9,10 @@ g.maplocalleader = ','
 nnoremap('<Leader>w', ':w<CR>')
 nnoremap('<Leader>q', ':q<CR>')
 
+-- Reload Restart
+nnoremap('<Leader>vr', ':Reload<CR>')
+nnoremap('<Leader>vR', ':Restart<CR>')
+
+-- Telescope
+nnoremap('<Leader>bb', ':lua require("telescope.builtin").buffers{show_all_buffers = true}<CR>')
+
