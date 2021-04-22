@@ -115,5 +115,9 @@ require('packer').startup(function()
     end,
   }
 
+  use {
+    'famiu/nvim-reload'
+  }
+
 end, {git = {clone_timeout = 360}} )
 
