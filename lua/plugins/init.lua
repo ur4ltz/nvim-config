@@ -2,7 +2,7 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
   fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
@@ -10,11 +10,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- local packer_exists = pcall(vim.cmd, [[packadd packer.nvim]])
+vim.cmd [[packadd packer.nvim]]
 
 -- vim.cmd [[autocmd BufWritePost plugins.lua PackerCompile]]
 
-require('packer').startup(function()
-  use {'wbthomason/packer.nvim'}
+return require('packer').startup(function()
+  use {'wbthomason/packer.nvim', opt = true}
 
 --  use {
 --    disable = true,
@@ -47,19 +48,21 @@ require('packer').startup(function()
   }
 
   use {
-    'hrsh7th/nvim-compe',
-    requires = {
-      'hrsh7th/vim-vsnip',
-      --'hrsh7th/vim-vsnip-integ',
-      'rafamadriz/friendly-snippets'
-    },
-    config = require('plugins.config.compe') --.config()
-  }
-
-  use {
     'neovim/nvim-lspconfig',
     config = function()
       require('plugins.config.lsp')
+    end,
+  }
+
+  use {
+    'hrsh7th/nvim-compe',
+    requires = {
+      'nvim-lspconfig',
+      'hrsh7th/vim-vsnip',
+      'rafamadriz/friendly-snippets'
+    },
+    config = function()
+      require('plugins.config.compe')
     end,
   }
 
@@ -73,7 +76,9 @@ require('packer').startup(function()
       {'theHamsta/nvim-treesitter-pairs'}
     },
     run = ':TSUpdate',
-    config = require('plugins.config.treesitter')
+    config = function()
+      require('plugins.config.treesitter')
+    end,
   }
 
   use {
@@ -81,18 +86,24 @@ require('packer').startup(function()
     requires = {
       'nvim-lua/plenary.nvim'
     },
-    config = require('plugins.config.gitsigns')
+    config = function()
+      require('plugins.config.gitsigns')
+    end,
   }
 
   use {
     'famiu/feline.nvim',
     requires = {'nvim-web-devicons'},
-    config = require('plugins.config.feline')
+    config = function()
+      require('plugins.config.feline')
+    end,
   }
 
   use {
     'mhinz/vim-startify',
-    config = require('plugins.config.startify')
+    config = function()
+      require('plugins.config.startify')
+    end,
   }
 
   use {
