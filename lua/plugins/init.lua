@@ -86,6 +86,7 @@ require('packer').startup(function()
 
   use {
     'famiu/feline.nvim',
+    requires = {'nvim-web-devicons'},
     config = require('plugins.config.feline')
   }
 
