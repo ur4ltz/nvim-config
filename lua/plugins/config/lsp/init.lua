@@ -1,6 +1,7 @@
 -- vim: ts=2 sw=2 et:
 
 require('plugins.config.lsp.settings')
+require('plugins.config.lsp.diagnostic')
 
 -- Pretty icons
 vim.lsp.protocol.CompletionItemKind = {
