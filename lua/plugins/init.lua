@@ -17,23 +17,39 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
   use {'wbthomason/packer.nvim', opt = true}
 
---  use {
---    disable = true,
---    'gruvbox-community/gruvbox',
---    config = function()
---      vim.o.background = "dark"
---      vim.g.gruvbox_italics = true
---      vim.g.gruvbox_contrast_dark = "hard"
---      vim.cmd [[colorscheme gruvbox]]
---    end
---  }
+  use {
+    disable = true,
+    'gruvbox-community/gruvbox',
+    config = function()
+      vim.o.background = "dark"
+      vim.g.gruvbox_italics = true
+      vim.g.gruvbox_contrast_dark = "hard"
+      vim.cmd [[colorscheme gruvbox]]
+    end,
+  }
 
   use {
-    --disable = true,
+    disable = true,
     'drewtempelmeyer/palenight.vim',
---    config = function()
---      vim.cmd [[colorscheme palenight]]
---    end,
+    config = function()
+      vim.cmd [[colorscheme palenight]]
+    end,
+  }
+
+  use {
+    -- disable = true,
+    'marko-cerovac/material.nvim',
+    config = function()
+      vim.g.material_style = 'palenight'
+      vim.g.material_italic_comments = true
+      vim.g.material_italic_keywords = false
+      vim.g.material_italic_functions = false
+      vim.g.material_italic_variables = false
+      vim.g.material_contrast = true
+      vim.g.material_borders = true
+      -- Load the colorscheme
+      require('material').set()
+    end,
   }
 
   use {'kyazdani42/nvim-web-devicons'}
