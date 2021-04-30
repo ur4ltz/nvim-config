@@ -98,6 +98,12 @@ return require('packer').startup(function()
   }
 
   use {
+    'lukas-reineke/indent-blankline.nvim',
+    branch = 'lua',
+    setup = [[require('plugins.config.indentline')]]
+  }
+
+  use {
     'lewis6991/gitsigns.nvim',
     requires = {
       'nvim-lua/plenary.nvim'
