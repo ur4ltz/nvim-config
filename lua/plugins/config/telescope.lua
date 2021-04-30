@@ -53,7 +53,7 @@ telescope.setup {
   }
 }
 
-vim.api.nvim_set_keymap('n', '<Leader>ob', ':Telescope buffers<CR>', {})
+vim.api.nvim_set_keymap('n', '<Leader>ob', ':Telescope buffers show_all_buffers=true sort_lastused=true<CR>', {})
 vim.api.nvim_set_keymap('n', '<Leader>of', ':Telescope find_files<CR>', {})
 vim.api.nvim_set_keymap('n', '<Leader>og', ':Telescope git_files<CR>', {})
 -- vim.api.nvim_set_keymap('n', '<Leader>', ':Telescope <CR>', {})
