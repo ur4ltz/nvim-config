@@ -83,6 +83,16 @@ return require('packer').startup(function()
   }
 
   use {
+    'folke/lsp-trouble.nvim',
+    requires = {
+      'nvim-web-devicons'
+    },
+    config = function()
+      require('plugins.config.lsp-trouble')
+    end,
+  }
+
+  use {
     'nvim-treesitter/nvim-treesitter',
     requires = {
       {'nvim-treesitter/nvim-treesitter-refactor'},
