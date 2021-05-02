@@ -2,7 +2,7 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
   fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
@@ -10,29 +10,46 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- local packer_exists = pcall(vim.cmd, [[packadd packer.nvim]])
+vim.cmd [[packadd packer.nvim]]
 
 -- vim.cmd [[autocmd BufWritePost plugins.lua PackerCompile]]
 
-require('packer').startup(function()
-  use {'wbthomason/packer.nvim'}
-
---  use {
---    disable = true,
---    'gruvbox-community/gruvbox',
---    config = function()
---      vim.o.background = "dark"
---      vim.g.gruvbox_italics = true
---      vim.g.gruvbox_contrast_dark = "hard"
---      vim.cmd [[colorscheme gruvbox]]
---    end
---  }
+return require('packer').startup(function()
+  use {'wbthomason/packer.nvim', opt = true}
 
   use {
-    --disable = true,
+    disable = true,
+    'gruvbox-community/gruvbox',
+    config = function()
+      vim.o.background = "dark"
+      vim.g.gruvbox_italics = true
+      vim.g.gruvbox_contrast_dark = "hard"
+      vim.cmd [[colorscheme gruvbox]]
+    end,
+  }
+
+  use {
+    disable = true,
     'drewtempelmeyer/palenight.vim',
---    config = function()
---      vim.cmd [[colorscheme palenight]]
---    end,
+    config = function()
+      vim.cmd [[colorscheme palenight]]
+    end,
+  }
+
+  use {
+    -- disable = true,
+    'marko-cerovac/material.nvim',
+    config = function()
+      vim.g.material_style = 'palenight'
+      vim.g.material_italic_comments = true
+      vim.g.material_italic_keywords = false
+      vim.g.material_italic_functions = false
+      vim.g.material_italic_variables = false
+      vim.g.material_contrast = true
+      vim.g.material_borders = true
+      -- Load the colorscheme
+      require('material').set()
+    end,
   }
 
   use {'kyazdani42/nvim-web-devicons'}
@@ -47,19 +64,31 @@ require('packer').startup(function()
   }
 
   use {
-    'hrsh7th/nvim-compe',
-    requires = {
-      'hrsh7th/vim-vsnip',
-      --'hrsh7th/vim-vsnip-integ',
-      'rafamadriz/friendly-snippets'
-    },
-    config = require('plugins.config.compe') --.config()
-  }
-
-  use {
     'neovim/nvim-lspconfig',
     config = function()
       require('plugins.config.lsp')
+    end,
+  }
+
+  use {
+    'hrsh7th/nvim-compe',
+    requires = {
+      'nvim-lspconfig',
+      'hrsh7th/vim-vsnip',
+      'rafamadriz/friendly-snippets'
+    },
+    config = function()
+      require('plugins.config.compe')
+    end,
+  }
+
+  use {
+    'folke/lsp-trouble.nvim',
+    requires = {
+      'nvim-web-devicons'
+    },
+    config = function()
+      require('plugins.config.lsp-trouble')
     end,
   }
 
@@ -73,7 +102,15 @@ require('packer').startup(function()
       {'theHamsta/nvim-treesitter-pairs'}
     },
     run = ':TSUpdate',
-    config = require('plugins.config.treesitter')
+    config = function()
+      require('plugins.config.treesitter')
+    end,
+  }
+
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    branch = 'lua',
+    setup = [[require('plugins.config.indentline')]]
   }
 
   use {
@@ -81,7 +118,17 @@ require('packer').startup(function()
     requires = {
       'nvim-lua/plenary.nvim'
     },
-    config = require('plugins.config.gitsigns')
+    config = function()
+      require('plugins.config.gitsigns')
+    end,
+  }
+
+  use {
+    'famiu/feline.nvim',
+    requires = {'nvim-web-devicons'},
+    config = function()
+      require('plugins.config.feline')
+    end,
   }
 
   use {
@@ -91,7 +138,9 @@ require('packer').startup(function()
 
   use {
     'mhinz/vim-startify',
-    config = require('plugins.config.startify')
+    config = function()
+      require('plugins.config.startify')
+    end,
   }
 
   use {
@@ -104,5 +153,20 @@ require('packer').startup(function()
 
   use {'euclidianAce/BetterLua.vim'}
 
-end)
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      'nvim-lua/popup.nvim',
+      'nvim-lua/plenary.nvim',
+    },
+    config = function()
+      require('plugins.config.telescope')
+    end,
+  }
+
+  use {
+    'famiu/nvim-reload'
+  }
+
+end, {git = {clone_timeout = 360}} )
 

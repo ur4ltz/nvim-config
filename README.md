@@ -1,2 +1,2 @@
 # nvim
-My neovim config writed in Lua (WIP).
+My neovim config written in Lua (WIP).
