@@ -124,6 +124,16 @@ return require('packer').startup(function()
   }
 
   use {
+    'TimUntersberger/neogit',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('plugins.config.neogit')
+    end,
+  }
+
+  use {
     'famiu/feline.nvim',
     requires = {'nvim-web-devicons'},
     config = function()
@@ -162,6 +172,10 @@ return require('packer').startup(function()
   use {
     'famiu/nvim-reload'
   }
+
+--  use {
+--    'folke/which-key.nvim'
+--  }
 
 end, {git = {clone_timeout = 360}} )
 
