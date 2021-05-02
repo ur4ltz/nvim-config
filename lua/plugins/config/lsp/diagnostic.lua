@@ -5,35 +5,35 @@ local lspconfig = require('lspconfig')
 local sign_define = vim.fn.sign_define
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
-    vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        underline = true,
-        virtual_text = {
-            spacing = 4,
-            --prefix = '~'
-        },
-        signs = true,
-        update_in_insert = false,
-    }
+  vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = true,
+    virtual_text = {
+      spacing = 4,
+      --prefix = '~'
+    },
+    signs = true,
+    update_in_insert = false,
+  }
 )
 
 sign_define(
-    "LspDiagnosticsSignError",
-    {text = ' ', texthl = 'LspDiagnosticsError'}
+  "LspDiagnosticsSignError",
+  {text = ' ', texthl = 'LspDiagnosticsError'}
 )
 
 sign_define(
-    "LspDiagnosticsSignWarning",
-    {text = ' ', texthl = 'LspDiagnosticsWarning'}
+  "LspDiagnosticsSignWarning",
+  {text = ' ', texthl = 'LspDiagnosticsWarning'}
 )
 
 sign_define(
-    "LspDiagnosticsSignInformation",
-    {text = ' ', texthl = 'LspDiagnosticsInformation'}
+  "LspDiagnosticsSignInformation",
+  {text = ' ', texthl = 'LspDiagnosticsInformation'}
 )
 
 sign_define(
-    "LspDiagnosticsSignHint",
-    {text = ' ', texthl = 'LspDiagnosticsHint'}
+  "LspDiagnosticsSignHint",
+  {text = ' ', texthl = 'LspDiagnosticsHint'}
 )
 
