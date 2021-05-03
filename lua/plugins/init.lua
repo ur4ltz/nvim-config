@@ -99,7 +99,8 @@ return require('packer').startup(function()
       {'nvim-treesitter/nvim-treesitter-textobjects'},
       {'p00f/nvim-ts-rainbow'},
       {'bryall/contextprint.nvim'},
-      {'theHamsta/nvim-treesitter-pairs'}
+      {'theHamsta/nvim-treesitter-pairs'},
+      {'nvim-treesitter/playground'}
     },
     run = ':TSUpdate',
     config = function()
