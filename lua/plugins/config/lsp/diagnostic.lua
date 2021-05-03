@@ -9,11 +9,11 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
   vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
     virtual_text = {
-      spacing = 4,
+      spacing = 2,
       --prefix = '~'
     },
     signs = true,
-    update_in_insert = false,
+    update_in_insert = true,
   }
 )
 
