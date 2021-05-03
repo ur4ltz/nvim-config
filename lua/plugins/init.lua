@@ -125,6 +125,14 @@ return require('packer').startup(function()
   }
 
   use {
+    'sindrets/diffview.nvim',
+    requires = {'nvim-web-devicons'},
+    config = function()
+      require('plugins.config.diffview')
+    end,
+  }
+
+  use {
     'famiu/feline.nvim',
     requires = {'nvim-web-devicons'},
     config = function()
