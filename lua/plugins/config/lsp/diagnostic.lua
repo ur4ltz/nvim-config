@@ -17,23 +17,31 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
   }
 )
 
-sign_define(
-  "LspDiagnosticsSignError",
-  {text = ' ', texthl = 'LspDiagnosticsError'}
+sign_define("LspDiagnosticsSignError", {
+    text   = ' ',
+    texthl = 'LspDiagnosticsSignError',
+    numhl  = 'LspDiagnosticsSignError'
+  }
 )
 
-sign_define(
-  "LspDiagnosticsSignWarning",
-  {text = ' ', texthl = 'LspDiagnosticsWarning'}
+sign_define("LspDiagnosticsSignWarning", {
+    text   = ' ',
+    texthl = 'LspDiagnosticsSignWarning',
+    numhl  = 'LspDiagnosticsSignWarning'
+  }
 )
 
-sign_define(
-  "LspDiagnosticsSignInformation",
-  {text = ' ', texthl = 'LspDiagnosticsInformation'}
+sign_define("LspDiagnosticsSignInformation", {
+    text   = ' ',
+    texthl = 'LspDiagnosticsSignInformation',
+    numhl  = 'LspDiagnosticsSignInformation'
+  }
 )
 
-sign_define(
-  "LspDiagnosticsSignHint",
-  {text = ' ', texthl = 'LspDiagnosticsHint'}
+sign_define("LspDiagnosticsSignHint", {
+    text   = ' ',
+    texthl = 'LspDiagnosticsSignHint',
+    numhl  = 'LspDiagnosticsSignHint'
+  }
 )
 
