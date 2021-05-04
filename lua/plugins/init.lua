@@ -172,5 +172,12 @@ return require('packer').startup(function()
     'famiu/nvim-reload'
   }
 
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('plugins.config.colorizer')
+    end,
+  }
+
 end, {git = {clone_timeout = 360}} )
 
