@@ -5,6 +5,11 @@ local nvim_lsp = require('lspconfig')
 
 local custom_attach = function(client)
   -- test
+  nmap('gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+  nmap('gd', '<cmd>lua vim.lsp.buf.definitions()<cr>')
+  nmap('K',  '<cmd>lua vim.lsp.buf.hover()<cr>')
+
+  nmap('<Leader>gr', '<cmd>lua vim.lsp.buf.references()<cr>')
 end
 
 local function get_lua_runtime()
@@ -42,9 +47,12 @@ local servers = {
         workspace = {
           library = get_lua_runtime(),
           preloadFileSize = 1000
-        }
-      }
-    }
+        },
+        telemetry = {
+          enable = false,
+        },
+      },
+    },
   },
 }
 
