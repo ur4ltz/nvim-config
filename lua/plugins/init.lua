@@ -75,7 +75,7 @@ return require('packer').startup(function()
     requires = {
       'nvim-lspconfig',
       'hrsh7th/vim-vsnip',
-      'rafamadriz/friendly-snippets'
+      -- 'rafamadriz/friendly-snippets'
     },
     config = function()
       require('plugins.config.compe')
@@ -98,7 +98,7 @@ return require('packer').startup(function()
       {'nvim-treesitter/nvim-treesitter-refactor'},
       {'nvim-treesitter/nvim-treesitter-textobjects'},
       {'p00f/nvim-ts-rainbow'},
-      {'bryall/contextprint.nvim'},
+      -- {'polarmutex/contextprint.nvim'},
       {'theHamsta/nvim-treesitter-pairs'},
       {'nvim-treesitter/playground'}
     },
@@ -178,6 +178,8 @@ return require('packer').startup(function()
       require('plugins.config.colorizer')
     end,
   }
+
+  use {'mg979/vim-visual-multi'}
 
 end, {git = {clone_timeout = 360}} )
 
