@@ -13,6 +13,7 @@ g.indentLine_fileTypeExclude = {
   'tex',
   'txt',
 }
+g.indent_blankline_show_current_context = true
 g.indent_blankline_show_first_indent_level = false
 g.indent_blankline_show_trailing_blankline_indent = false
 g.indent_blankline_space_char_blankline = ' '

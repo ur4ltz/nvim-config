@@ -1,5 +1,7 @@
 -- vim: ts=2 sw=2 et:
 
+vim.g.vsnip_snippet_dir = os.getenv('HOME') .. '/.config/nvim/snippets/'
+
 require('compe').setup {
   enabled = true,
   autocomplete = true,

@@ -9,31 +9,39 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
   vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
     virtual_text = {
-      spacing = 4,
+      spacing = 2,
       --prefix = '~'
     },
     signs = true,
-    update_in_insert = false,
+    update_in_insert = true,
   }
 )
 
-sign_define(
-  "LspDiagnosticsSignError",
-  {text = ' ', texthl = 'LspDiagnosticsError'}
+sign_define("LspDiagnosticsSignError", {
+    text   = ' ',
+    texthl = 'LspDiagnosticsSignError',
+    numhl  = 'LspDiagnosticsSignError'
+  }
 )
 
-sign_define(
-  "LspDiagnosticsSignWarning",
-  {text = ' ', texthl = 'LspDiagnosticsWarning'}
+sign_define("LspDiagnosticsSignWarning", {
+    text   = ' ',
+    texthl = 'LspDiagnosticsSignWarning',
+    numhl  = 'LspDiagnosticsSignWarning'
+  }
 )
 
-sign_define(
-  "LspDiagnosticsSignInformation",
-  {text = ' ', texthl = 'LspDiagnosticsInformation'}
+sign_define("LspDiagnosticsSignInformation", {
+    text   = ' ',
+    texthl = 'LspDiagnosticsSignInformation',
+    numhl  = 'LspDiagnosticsSignInformation'
+  }
 )
 
-sign_define(
-  "LspDiagnosticsSignHint",
-  {text = ' ', texthl = 'LspDiagnosticsHint'}
+sign_define("LspDiagnosticsSignHint", {
+    text   = ' ',
+    texthl = 'LspDiagnosticsSignHint',
+    numhl  = 'LspDiagnosticsSignHint'
+  }
 )
 
