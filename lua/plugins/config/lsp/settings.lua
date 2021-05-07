@@ -30,8 +30,12 @@ local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-s
 
 local servers = {
   bashls = {},
-  vimls = {},
+  cssls = {},
   gopls = {},
+  html = {},
+  jsonls = {},
+  vimls = {},
+  yamlls = {},
   sumneko_lua = {
     cmd = {sumneko_binary, '-E', sumneko_root_path .. '/main.lua'},
     settings = {
