@@ -152,6 +152,7 @@ return require('packer').startup(function()
     config = function()
       vim.g.mundo_width          = 60
       vim.g.mundo_preview_bottom = true
+      nmap('<F5>', ':MundoToggle<cr>')
     end,
   }
 
