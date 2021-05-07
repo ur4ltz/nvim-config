@@ -49,7 +49,7 @@ function M.setup()
     }
   }
 
-    vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', {
+    vim.api.nvim_set_keymap('n', '<F3>', ':NvimTreeToggle<CR>', {
         noremap = true,
         silent = true
     })
