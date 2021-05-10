@@ -1,7 +1,8 @@
 -- vim: ts=2 sw=2 et:
 
-local api = vim.api
+local api      = vim.api
 local nvim_lsp = require('lspconfig')
+local util     = require('lspconfig.util')
 
 local custom_attach = function(client)
   -- test
@@ -36,6 +37,7 @@ local servers = {
   jsonls = {},
   vimls = {},
   yamlls = {},
+
   sumneko_lua = {
     cmd = {sumneko_binary, '-E', sumneko_root_path .. '/main.lua'},
     settings = {
@@ -57,6 +59,11 @@ local servers = {
         },
       },
     },
+  },
+
+  tsserver = {
+    filetypes = {"javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"},
+    root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git")
   },
 }
 
