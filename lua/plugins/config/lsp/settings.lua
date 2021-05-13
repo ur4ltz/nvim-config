@@ -16,18 +16,18 @@ end
 local function get_lua_runtime()
     local result = {}
     for _, path in pairs(api.nvim_list_runtime_paths()) do
-        local lua_path = path .. "/lua/";
+        local lua_path = path .. '/lua/';
         if vim.fn.isdirectory(lua_path) then
             result[lua_path] = true
         end
     end
-    result[vim.fn.expand("$VIMRUNTIME/lua")] = true
+    result[vim.fn.expand('$VIMRUNTIME/lua')] = true
     return result;
 end
 
 local system_name = 'Linux'
 local sumneko_root_path = vim.fn.expand('$HOME/github/lua-language-server')
-local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
+local sumneko_binary = sumneko_root_path..'/bin/'..system_name..'/lua-language-server'
 
 local servers = {
   bashls = {},
@@ -63,8 +63,8 @@ local servers = {
   },
 
   tsserver = {
-    filetypes = {"javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"},
-    root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git")
+    filetypes = {'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx'},
+    root_dir = util.root_pattern('package.json', 'tsconfig.json', 'jsconfig.json', '.git')
   },
 }
 
