@@ -35,6 +35,7 @@ local servers = {
   gopls = {},
   html = {},
   jsonls = {},
+  pyls = {},
   vimls = {},
   yamlls = {},
 
