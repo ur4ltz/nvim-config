@@ -84,12 +84,12 @@ return require('packer').startup(
     }
 
     use {
-      'folke/lsp-trouble.nvim',
+      'folke/trouble.nvim',
       requires = {
         'nvim-web-devicons'
       },
       config = function()
-        require('plugins.config.lsp-trouble')
+        require('plugins.config.trouble')
       end,
     }
 
