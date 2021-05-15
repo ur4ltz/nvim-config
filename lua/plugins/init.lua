@@ -198,6 +198,8 @@ return require('packer').startup(
 
     use {'mg979/vim-visual-multi'}
 
+    use {'dstein64/nvim-scrollview'}
+
   end,
   {
     git = {
