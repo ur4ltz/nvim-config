@@ -53,7 +53,8 @@ local servers = {
         },
         workspace = {
           library = get_lua_runtime(),
-          preloadFileSize = 1000
+          maxPreload = 2000,
+          preloadFileSize = 50000
         },
         telemetry = {
           enable = false,
