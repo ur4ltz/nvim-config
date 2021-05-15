@@ -16,7 +16,7 @@ o.hlsearch      = true
 
 o.clipboard     = 'unnamedplus'
 
-o.completeopt   = 'menuone,noinsert,noselect'
+o.completeopt   = 'menuone,noinsert'
 
 o.backup        = false -- true
 -- opt.writebackup = true
