@@ -2,9 +2,10 @@
 
 local g = vim.g
 
-g.indentLine_char = '│'
-g.indentLine_faster = 1
-g.indentLine_fileTypeExclude = {
+-- g.indent_blankline_char = '│'
+g.indent_blankline_char = '▏'
+--g.indentLine_faster = 1
+g.indent_blankline_filetype_exclude = {
   'NvimTree',
   'help',
   'markdown',
@@ -12,6 +13,25 @@ g.indentLine_fileTypeExclude = {
   'startify',
   'tex',
   'txt',
+}
+g.indent_blankline_buftype_exclude = {
+  'terminal',
+}
+g.indent_blankline_context_patterns = {
+  'class',
+  'funtion',
+  'method',
+  '^if',
+  'while',
+  'for',
+  'with',
+  'func_literal',
+  'block',
+  'try',
+  'except',
+  'argument_list',
+  'object',
+  'dictionary'
 }
 g.indent_blankline_show_current_context = true
 g.indent_blankline_show_first_indent_level = false
