@@ -38,7 +38,7 @@ return require('packer').startup(
     }
 
     use {
-      -- disable = true,
+      disable = true,
       'marko-cerovac/material.nvim',
       config = function()
         vim.g.material_style            = 'palenight'
@@ -50,6 +50,21 @@ return require('packer').startup(
         vim.g.material_borders          = true
         -- Load the colorscheme
         require('material').set()
+      end,
+    }
+
+    use {
+      -- disable = true,
+      'folke/tokyonight.nvim',
+      config = function()
+        vim.g.tokyonight_style            = 'storm' -- 'storm', 'night'  or 'day'
+        vim.g.tokyonight_italic_comments  = true
+        vim.g.tokyonight_italic_keywords  = false
+        vim.g.tokyonight_italic_functions = false
+        vim.g.tokyonight_italic_variables = false
+        vim.g.tokyonight_transparent      = false
+        vim.g.tokyonight_sidebars         = {'qf', 'vista_kind', 'terminal', 'packer'}
+        vim.cmd [[colorscheme tokyonight]]
       end,
     }
 
