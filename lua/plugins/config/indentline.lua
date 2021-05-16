@@ -7,6 +7,7 @@ g.indent_blankline_char = '▏'
 --g.indentLine_faster = 1
 g.indent_blankline_filetype_exclude = {
   'NvimTree',
+  'git',
   'help',
   'markdown',
   'packer',
