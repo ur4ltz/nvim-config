@@ -111,12 +111,12 @@ return require('packer').startup(
     use {
       'nvim-treesitter/nvim-treesitter',
       requires = {
-        {'nvim-treesitter/nvim-treesitter-refactor'},
-        {'nvim-treesitter/nvim-treesitter-textobjects'},
-        {'p00f/nvim-ts-rainbow'},
-        -- {'polarmutex/contextprint.nvim'},
-        {'theHamsta/nvim-treesitter-pairs'},
-        {'nvim-treesitter/playground'}
+        'nvim-treesitter/nvim-treesitter-refactor',
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        'p00f/nvim-ts-rainbow',
+        -- 'polarmutex/contextprint.nvim',
+        'theHamsta/nvim-treesitter-pairs',
+        'nvim-treesitter/playground'
       },
       run = ':TSUpdate',
       config = function()
