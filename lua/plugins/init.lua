@@ -203,6 +203,8 @@ return require('packer').startup(
       end,
     }
 
+    use {'junegunn/vim-easy-align'}
+
     use {'mg979/vim-visual-multi'}
 
     use {'dstein64/nvim-scrollview'}
