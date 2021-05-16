@@ -214,6 +214,7 @@ return require('packer').startup(
     },
 
     display = {
+      open_cmd = 'leftabove 80vnew [packer]',
       border = {'╭', '─', '╮', '│', '╯', '─', '╰', '│'}
     }
   }
