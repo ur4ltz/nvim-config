@@ -8,7 +8,7 @@ vim.g.startify_fortune_use_unicode = 1
 
 vim.g.startify_session_persistence = 1
 
-vim.g.startify_session_sort = 1
+vim.g.startify_session_sort        = 1
 
 --[[
 vim.g.startify_custom_header = {
