@@ -4,6 +4,7 @@ local o   = vim.o
 local g   = vim.g
 local wo  = vim.wo
 
+-- Global options {{{
 o.updatetime    = 800
 o.termguicolors = true
 o.mouse         = 'n'
@@ -14,19 +15,22 @@ o.wildmenu      = true
 o.wildmode      = 'full'
 o.hlsearch      = true
 
+o.listchars     = [[tab:→ ,space:·,eol:¶,trail:·,extends:↷,precedes:↶]]
+
 o.clipboard     = 'unnamedplus'
 
 o.completeopt   = 'menuone,noinsert'
 
 o.backup        = false -- true
--- opt.writebackup = true
 o.undofile      = true
-
+-- }}}
+-- Window options {{{
 wo.number       = true
 wo.list         = true
 
 wo.cursorline   = true
 wo.cursorcolumn = true
+-- }}}
 
 -- g.loaded_node_provider   = 0
 -- g.loaded_ruby_provider   = 0
