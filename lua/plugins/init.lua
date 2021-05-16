@@ -186,6 +186,13 @@ return require('packer').startup(
     }
 
     use {
+      'terrortylor/nvim-comment',
+      config = function()
+        require('plugins.config.comment')
+      end,
+    }
+
+    use {
       'famiu/nvim-reload'
     }
 
