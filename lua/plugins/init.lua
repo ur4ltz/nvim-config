@@ -207,6 +207,13 @@ return require('packer').startup(
 
     use {'dstein64/nvim-scrollview'}
 
+    use {
+      'winston0410/range-highlight.nvim',
+      config = function()
+        require("range-highlight").setup{}
+      end,
+    }
+
   end,
   {
     git = {
