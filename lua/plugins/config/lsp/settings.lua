@@ -49,7 +49,12 @@ local servers = {
         },
         diagnostics = {
           enable = true,
-          globals = {'vim', 'use'},
+          globals = {
+            -- Neovim
+            'vim',
+            -- Packer
+            'use'
+          },
         },
         workspace = {
           library = get_lua_runtime(),
