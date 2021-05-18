@@ -858,7 +858,7 @@
         "scope": "source.lua"
     },
     "req": {
-        "body": "require(\"${1:module}\")",
+        "body": "require('${1:module}')",
         "description": "require()",
         "prefix": "req",
         "scope": "source.lua"
