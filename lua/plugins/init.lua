@@ -22,7 +22,7 @@ packer.init {
   },
 
   display = {
-    open_cmd = 'topleft 80vnew [packer]',
+    open_cmd = 'topleft 65vnew [packer]',
     border = {'╭', '─', '╮', '│', '╯', '─', '╰', '│'}
   }
 }
