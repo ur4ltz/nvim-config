@@ -1,7 +1,10 @@
 -- vim: ts=2 sw=2 et:
 
-local actions = require('telescope.actions')
+local actions   = require('telescope.actions')
 local telescope = require('telescope')
+
+-- Extensions
+require('telescope').load_extension('project')
 
 telescope.setup {
   defaults = {

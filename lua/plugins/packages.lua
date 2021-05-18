@@ -161,11 +161,13 @@ return require('packer').startup(
 
     use {'euclidianAce/BetterLua.vim'}
 
+    -- Telescope
     use {
       'nvim-telescope/telescope.nvim',
       requires = {
         'nvim-lua/popup.nvim',
         'nvim-lua/plenary.nvim',
+        'nvim-telescope/telescope-project.nvim',
       },
       config = function()
         require('plugins.config.telescope')
