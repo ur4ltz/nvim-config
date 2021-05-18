@@ -15,4 +15,5 @@ nnoremap('<Leader>vR', ':Restart<CR>')
 
 -- Telescope
 nnoremap('<Leader>bb', ':lua require("telescope.builtin").buffers{show_all_buffers = true}<CR>')
+nnoremap('<C-p>',      ':lua require("telescope").extensions.project.project{display_type = "full"}<CR>')
 
