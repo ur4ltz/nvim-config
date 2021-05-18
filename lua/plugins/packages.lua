@@ -78,6 +78,7 @@ return require('packer').startup(
         'nvim-lspconfig',
         'hrsh7th/vim-vsnip',
         -- 'rafamadriz/friendly-snippets'
+        'tamago324/compe-zsh',
       },
       config = function()
         require('plugins.config.compe')
