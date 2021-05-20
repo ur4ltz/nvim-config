@@ -217,6 +217,18 @@ return require('packer').startup(
       end,
     }
 
+    use {
+      'mfussenegger/nvim-dap',
+      requires = {
+        {'jbyuki/one-small-step-for-vimkind'},
+        {'theHamsta/nvim-dap-virtual-text', requires = 'nvim-treesitter'},
+        {'nvim-telescope/telescope-dap.nvim', requires = {'telescope.nvim', 'nvim-treesitter'}},
+      },
+      config = function ()
+        require('plugins.config.dap')
+      end
+    }
+
   end
 )
 
