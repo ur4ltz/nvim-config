@@ -1,11 +1,16 @@
 -- vim: ts=2 sw=2 et:
 
-local api      = vim.api
-local nvim_lsp = require('lspconfig')
-local util     = require('lspconfig.util')
+local api       = vim.api
+local lspconfig = require('lspconfig')
+local util      = require('lspconfig.util')
 
-local custom_attach = function(client)
-  -- test
+local custom_attach = function(client, bufnr)
+  -- test --
+  local basics = require('lsp_basics')
+  basics.make_lsp_commands(client, bufnr)
+  basics.make_lsp_mappings(client, bufnr)
+  -- test --
+
   nmap('gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
   nmap('gd', '<cmd>lua vim.lsp.buf.definitions()<cr>')
   nmap('K',  '<cmd>lua vim.lsp.buf.hover()<cr>')
@@ -76,6 +81,6 @@ local servers = {
 
 for server, config in pairs(servers) do
   config.on_attach = custom_attach
-  nvim_lsp[server].setup(config)
+  lspconfig[server].setup(config)
 end
 
