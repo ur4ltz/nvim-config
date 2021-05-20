@@ -65,6 +65,7 @@ return require('packer').startup(
       config = require('plugins.config.tree-config').setup()
     }
 
+    -- LSP
     use {
       'neovim/nvim-lspconfig',
       config = function()
@@ -96,6 +97,14 @@ return require('packer').startup(
     }
 
     use {
+      'glepnir/lspsaga.nvim',
+      config = function ()
+        require('lspsaga').init_lsp_saga()
+      end
+    }
+
+    -- TreeSitter
+    use {
       'nvim-treesitter/nvim-treesitter',
       requires = {
         'nvim-treesitter/nvim-treesitter-refactor',
@@ -117,6 +126,7 @@ return require('packer').startup(
       setup = [[require('plugins.config.indentline')]]
     }
 
+    -- Git
     use {
       'lewis6991/gitsigns.nvim',
       requires = {
