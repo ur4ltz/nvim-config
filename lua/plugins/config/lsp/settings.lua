@@ -19,15 +19,15 @@ local custom_attach = function(client, bufnr)
 end
 
 local function get_lua_runtime()
-    local result = {}
-    for _, path in pairs(api.nvim_list_runtime_paths()) do
-        local lua_path = path .. '/lua/';
-        if vim.fn.isdirectory(lua_path) then
-            result[lua_path] = true
-        end
+  local result = {}
+  for _, path in pairs(api.nvim_list_runtime_paths()) do
+    local lua_path = path .. '/lua/';
+    if vim.fn.isdirectory(lua_path) then
+      result[lua_path] = true
     end
-    result[vim.fn.expand('$VIMRUNTIME/lua')] = true
-    return result;
+  end
+  result[vim.fn.expand('$VIMRUNTIME/lua')] = true
+  return result;
 end
 
 local system_name = 'Linux'
