@@ -238,6 +238,9 @@ return require('packer').startup(
       end
     }
 
+    -- Teal language support
+    use {'teal-language/vim-teal'}
+
   end
 )
 
