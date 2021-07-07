@@ -44,6 +44,17 @@ local servers = {
   vimls = {},
   yamlls = {},
 
+  solargraph = {
+    cmd = {'solargraph', 'stdio'},
+    filetypes = {'ruby'},
+    root_dir = util.root_pattern('Gemfile', '.git'),
+    settings = {
+      solargraph = {
+        diagnostics = true,
+      }
+    }
+  },
+
   sumneko_lua = {
     cmd = {sumneko_binary, '-E', sumneko_root_path .. '/main.lua'},
     settings = {
