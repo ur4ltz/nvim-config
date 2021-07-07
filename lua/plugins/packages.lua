@@ -238,9 +238,12 @@ return require('packer').startup(
       end
     }
 
+    use {'rcarriga/nvim-dap-ui'}
+
+    use {'Pocco81/DAPInstall.nvim'}
+
     -- Teal language support
     use {'teal-language/vim-teal'}
 
   end
 )
-
