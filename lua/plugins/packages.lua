@@ -226,6 +226,7 @@ return require('packer').startup(
       end,
     }
 
+    -- DAP
     use {
       'mfussenegger/nvim-dap',
       requires = {
