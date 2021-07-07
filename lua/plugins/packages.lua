@@ -5,6 +5,14 @@ return require('packer').startup(
     use {'wbthomason/packer.nvim'}
 
     use {
+      'jenterkin/vim-autosource',
+      config = function()
+        vim.g.autosource_conf_names = {'.lvimrc', '.lvimrc.lua'}
+        vim.g.autosource_hashdir = vim.fn.expand('$HOME/.config/nvim/etc/as_hashes')
+      end,
+    }
+
+    use {
       disable = true,
       'gruvbox-community/gruvbox',
       config = function()
