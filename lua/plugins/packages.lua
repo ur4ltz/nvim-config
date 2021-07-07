@@ -95,6 +95,7 @@ return require('packer').startup(
     }
 
     use {'nanotee/nvim-lsp-basics'}
+    use {'nanotee/luv-vimdocs'}
 
     use {
       'folke/trouble.nvim',
