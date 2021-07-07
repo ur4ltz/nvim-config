@@ -1,4 +1,5 @@
 #
-plugin/packer_compiled.vim
+plugin/packer_compiled.lua
 
 /temp/
+/etc/
