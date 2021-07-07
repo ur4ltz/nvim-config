@@ -5,9 +5,9 @@ require('plugins.config.lsp.diagnostic')
 
 -- Pretty icons
 vim.lsp.protocol.CompletionItemKind = {
-  '[text]',
+  '  [text]',
   '[method]',
-  ' [function]',
+  '  [function]',
   '[constructor]',
   '[field]',
   '[variable]',
@@ -19,7 +19,7 @@ vim.lsp.protocol.CompletionItemKind = {
   '[value]',
   '[enum]',
   '[key]',
-  '[snippet]',
+  '  [snippet]',
   '[color]',
   '[file]',
   '[reference]',
