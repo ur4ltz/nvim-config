@@ -26,7 +26,7 @@ telescope.setup {
     selection_strategy = "reset",
     sorting_strategy   = "descending",
     layout_strategy    = "horizontal",
-    layout_defaults = {
+    layout_config = {
       horizontal = {
         mirror = false,
       },
