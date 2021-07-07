@@ -13,8 +13,8 @@ require('gitsigns').setup {
     noremap = true,
     buffer  = true,
 
-    ['n ]c'] = {expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'"},
-    ['n [c'] = {expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'"},
+    ['n ]c'] = {expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
+    ['n [c'] = {expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
 
     ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
     ['n <leader>hu'] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
@@ -24,15 +24,17 @@ require('gitsigns').setup {
     ['n <leader>hb'] = '<cmd>lua require"gitsigns".blame_line()<CR>',
 
     -- Text objects
-    ['o ih'] = ':<C-U>lua require"gitsigns".select_hunk()<CR>',
-    ['x ih'] = ':<C-U>lua require"gitsigns".select_hunk()<CR>'
+    ['o ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
+    ['x ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>'
   },
   watch_index = {
     interval = 1000,
   },
   numhl              = true,
   linehl             = false,
-  current_line_blame = false,
+  current_line_blame = true,
+  current_line_blame_delay = 1000,
+  current_line_blame_position = 'right_align',
   sign_priority      = 6,
   update_debounce    = 100,
   status_formatter   = nil,
